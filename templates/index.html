@@ -1,0 +1,72 @@
+<html>
+<title> HomePage </title>
+
+<style>
+.button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: black;
+  background-color: lightgray;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: lightblue}
+
+.button:active {
+  background-color: lightgray;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+input[type=text]
+{
+ padding: 12px 20px;
+ margin: 8px 0;
+ box-sizing: border-box;
+}
+
+
+</style>
+
+<body>
+
+        <br>
+        <center>
+        <h1><b>Enter Feature to Predict  whether it is Setosa or Versicolor or Virginica </b> </h1>
+
+
+        <h3>
+    <form action="{{url_for('predict')}}" method="POST">
+            <label>Enter Sepal Length: </label>
+            <input type="text" step="0.01" name="sepal_length"  placeholder=" Enter in between 3.5 - 8.0" required >
+        <br><br>
+            <label>Enter Sepal Width : </label>
+            <input type="text" step="0.01" name="sepal_width"  placeholder=" Enter in between 2.0 - 5.0" required>
+        <br><br>
+            <label>Enter Petal Length: </label>
+            <input type="text" step="0.01" name="petal_length"  placeholder=" Enter in between 1.0 - 7.0" required>
+        <br><br>
+            <label>Enter Petal Width : </label>
+            <input type="text" step="0.01" name="petal_width"   placeholder=" Enter in between 0.1 - 2.8" required>
+        <br><br>
+            <button type="submit" class="button">Predict </button>
+</h3>
+</center>
+    </form>
+
+    <h1><h1>
+        <b><center>
+    {{prediction_text}}
+        </center></b>
+    </h1></h1>
+
+</body>
+</html>
+
