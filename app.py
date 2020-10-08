@@ -23,6 +23,7 @@ def predict():
 
     return render_template('index.html', prediction_text='Predicted type of the plant is {}'.format(output))
 
+
 @app.route('/predict_api',methods=['POST'])
 def predict_api():
 
@@ -30,6 +31,7 @@ def predict_api():
     prediction = model.predict([np.array(list(data.values()))])
     output = str(prediction[0])
     return jsonify(output)
+
 
 if __name__ == "__main__":
     app.run()
